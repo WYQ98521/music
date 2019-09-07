@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+    }    
+
+    .cover {
+        position: absolute;
+        filter: blur(5px);
+        display: block;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url(http://cloud.hunger-valley.com/17-9-22/87786461.jpg)  center center no-repeat;
+        background-size: cover;
+    }
+
+    .musicBox {
+        width: 340px;
+        font-family: cursive;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #f06d6a;
+    }
+
+    .musicPanel {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px 15px 5px 15px;
+        border: 1px solid #76dba3;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1), 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .music .control {
+        float: left;
+        font-size: 22px;
+        margin-top: 16px; 
+    }
+    
+    .music .info {
+       margin-left: 120px;
+       
+    }
+
+    .music .fa {
+        cursor: pointer;
+        margin: 0px 4px;
+    }
+
+    .musicBox .info .title {
+      font-size: 18px;
+    }
+    
+    .musicBox .info .author {
+      font-size: 13px;
+    }
+
+    .process {
+        width: 260px;
+        margin: 0 auto;
+        
+    }
+
+    .process .bar {
+        height: 3px;
+        margin-top: 15px;
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .process .time {
+        margin-top: 4px;
+        float: right;
+    }
+
+    .process:after, .musicBox::after{
+        clear: both;
+        content: '';
+        display: block;
+    }
+
+    .process .process-now {  
+      background-color: #ee8a87;
+      height: 3px;
+      width: 0;
+      position: relative;
+    }
+
+    .musicList {
+        list-style: none;
+    }
+
+    .musicList > li {
+        border: 1px solid #76dba3;
+        border-top: none;
+        padding: 4px 8px;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .musicList > li:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .musicList .playing::before{
+      position: relative;
+      top: 0;
+      left: 0;
+      content:'';
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    </style>
+</head>
+<body>
+    <div class="cover"></div>
+    <div class="musicBox">
+        <div class="musicPanel">
+            <div class="music">
+              <div class="control">
+                <span class="back"><i class="fa fa-step-backward"></i></span>
+                <span class="play"><i class="fa fa-pause"></i></span>
+                <span class="forward"><i class="fa fa-step-forward"></i></span>
+              </div>
+              <div class="info">
+                <div class="title">His Song</div>
+                <div class="author">Tan Yulin</div>
+              </div>
+            </div>
+            <div class="process">
+                <div class="bar">
+                    <div class="process-total"></div>
+                    <div class="process-now"></div>
+                </div>
+                <div class="time">0:00</div>
+            </div>
+        </div>
+        <ul class="musicList">
+            <!-- <li>玫瑰</li>
+            <li>IF YOU</li> -->
+        </ul>
+    </div>
+    
+    <script src="c.js"></script>
+</body>
+</html>
